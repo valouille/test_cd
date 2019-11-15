@@ -1,0 +1,11 @@
+  sudo: required
+  language: python
+  python: 2.7
+
+  services:
+    - docker
+
+  script:
+    - make login
+    - make build
+    - make push
