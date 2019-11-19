@@ -1,3 +1,5 @@
+CURRENT_COMMIT = $(shell git rev-parse HEAD)
+
 .PHONY: login
 login:
 	echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
@@ -7,4 +9,4 @@ build:
 
 .PHONY: push
 push:
-	docker push valouille/echo:latest
+	docker push valouille/echo:${CURRENT_COMMIT}
