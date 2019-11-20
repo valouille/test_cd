@@ -9,4 +9,5 @@ build:
 
 .PHONY: push
 push:
+	docker tag valouille/echo:latest valouille/echo:${CURRENT_COMMIT}
 	docker push valouille/echo:${CURRENT_COMMIT}
